@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,45 +39,71 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <span className="text-2xl font-bold font-orbitron gradient-text">
                 HACKFEST
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a
-              href="#about"
+          <nav className="hidden md:flex items-center gap-6">
+            <Link
+              to="/"
+              className="text-foreground/80 hover:text-primary transition-colors font-medium"
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
               className="text-foreground/80 hover:text-primary transition-colors font-medium"
             >
               About
-            </a>
-            <a
-              href="#speakers"
+            </Link>
+            <Link
+              to="/products"
+              className="text-foreground/80 hover:text-primary transition-colors font-medium"
+            >
+              Products
+            </Link>
+            <Link
+              to="/speakers"
               className="text-foreground/80 hover:text-primary transition-colors font-medium"
             >
               Speakers
-            </a>
-            <a
-              href="#schedule"
+            </Link>
+            <Link
+              to="/schedule"
               className="text-foreground/80 hover:text-primary transition-colors font-medium"
             >
               Schedule
-            </a>
-            <a
-              href="#workshops"
+            </Link>
+            <Link
+              to="/workshops"
               className="text-foreground/80 hover:text-primary transition-colors font-medium"
             >
               Workshops
-            </a>
-            <Button
-              variant="default"
-              className="bg-primary hover:bg-primary/80 text-primary-foreground font-medium"
+            </Link>
+            <Link
+              to="/donate"
+              className="text-foreground/80 hover:text-primary transition-colors font-medium"
             >
-              Register Now
-            </Button>
+              Donate
+            </Link>
+            <Link
+              to="/sponsor"
+              className="text-foreground/80 hover:text-primary transition-colors font-medium"
+            >
+              Become a Sponsor
+            </Link>
+            <Link to="/register">
+              <Button
+                variant="default"
+                className="bg-primary hover:bg-primary/80 text-primary-foreground font-medium ml-2"
+              >
+                Register Now
+              </Button>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -97,46 +124,79 @@ const Navbar = () => {
         <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
             mobileMenuOpen
-              ? "max-h-[300px] opacity-100 py-4"
+              ? "max-h-[500px] opacity-100 py-4"
               : "max-h-0 opacity-0 overflow-hidden"
           }`}
         >
           <div className="flex flex-col gap-4 pt-2">
-            <a
-              href="#about"
+            <Link
+              to="/"
+              className="text-foreground/80 hover:text-primary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
               className="text-foreground/80 hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
-            </a>
-            <a
-              href="#speakers"
+            </Link>
+            <Link
+              to="/products"
+              className="text-foreground/80 hover:text-primary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Products
+            </Link>
+            <Link
+              to="/speakers"
               className="text-foreground/80 hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Speakers
-            </a>
-            <a
-              href="#schedule"
+            </Link>
+            <Link
+              to="/schedule"
               className="text-foreground/80 hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Schedule
-            </a>
-            <a
-              href="#workshops"
+            </Link>
+            <Link
+              to="/workshops"
               className="text-foreground/80 hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Workshops
-            </a>
-            <Button
-              variant="default"
-              className="bg-primary hover:bg-primary/80 text-primary-foreground font-medium w-full mt-2"
+            </Link>
+            <Link
+              to="/donate"
+              className="text-foreground/80 hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Register Now
-            </Button>
+              Donate
+            </Link>
+            <Link
+              to="/sponsor"
+              className="text-foreground/80 hover:text-primary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Become a Sponsor
+            </Link>
+            <Link
+              to="/register"
+              className="w-full"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Button
+                variant="default"
+                className="bg-primary hover:bg-primary/80 text-primary-foreground font-medium w-full mt-2"
+              >
+                Register Now
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
