@@ -16,13 +16,16 @@
     --popover: 232 45% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 196 100% 50%;
+    /* 237HackFest colors: neon green as primary */
+    --primary: 90 100% 50%;
     --primary-foreground: 232 45% 10%;
 
-    --secondary: 286 100% 65%;
+    /* Red from the logo as secondary */
+    --secondary: 0 100% 50%;
     --secondary-foreground: 232 45% 10%;
 
-    --accent: 331 94% 67%;
+    /* Yellow from the logo as accent */
+    --accent: 60 100% 50%;
     --accent-foreground: 232 45% 10%;
 
     --muted: 232 30% 15%;
@@ -33,18 +36,18 @@
 
     --border: 232 45% 15%;
     --input: 232 45% 15%;
-    --ring: 196 100% 50%;
+    --ring: 90 100% 50%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 232 50% 7%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 196 100% 50%;
+    --sidebar-primary: 90 100% 50%;
     --sidebar-primary-foreground: 232 45% 10%;
     --sidebar-accent: 232 30% 15%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 232 45% 15%;
-    --sidebar-ring: 196 100% 50%;
+    --sidebar-ring: 90 100% 50%;
   }
 }
 

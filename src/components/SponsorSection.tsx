@@ -2,76 +2,68 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import { Check, Award, BarChart, Globe, Users, Zap, Star } from "lucide-react";
+import { Check, Award, BarChart, Globe, Users, Zap, Star, ExternalLink } from "lucide-react";
 
 const SponsorSection = () => {
   const tiers = [
     {
-      name: "Bronze",
-      price: "$2,500",
-      color: "from-amber-700 to-amber-500",
+      name: "Platinum",
+      price: "50,000 XAF",
+      color: "from-accent to-primary",
       description: "Basic visibility with essential promotional opportunities",
       benefits: [
-        "Logo on event website",
-        "Social media mention",
-        "1 conference pass",
-        "Small booth space (6x6)",
-        "Digital swag inclusion"
+        "Logo on select advertising materials",
+        "A 10-minute speaking slot to highlight your company",
+        "A 1-day virtual employee cybersecurity training",
+        "Social media mentions and promotions"
       ]
     },
     {
       name: "Silver",
-      price: "$5,000",
+      price: "100,000 XAF",
       color: "from-gray-400 to-gray-200",
       description: "Enhanced visibility with broader audience reach",
       benefits: [
-        "All Bronze benefits",
-        "Logo on event materials",
-        "3 conference passes",
-        "Medium booth space (10x10)",
-        "Workshop opportunity",
-        "Attendee list access"
+        "Logo on all advertising materials",
+        "A presentation slot to showcase your company",
+        "A 1-day employee cybersecurity training (onsite in Douala or virtual)",
+        "Social media posts promoting your brand"
       ]
     },
     {
       name: "Gold",
-      price: "$10,000",
+      price: "200,000 XAF",
       color: "from-yellow-500 to-yellow-300",
+      featured: true,
       description: "Premium positioning with significant brand exposure",
       benefits: [
-        "All Silver benefits",
-        "Logo on main stage",
-        "5 conference passes",
-        "Large booth space (10x20)",
-        "Speaking opportunity",
-        "Featured blog post",
-        "Email promotion"
+        "Exclusive exhibition stand",
+        "Logo on ALL advertising materials",
+        "A 30-minute speaking slot to promote your company during the event",
+        "A 1-day employee cybersecurity training (onsite in Douala or virtual)",
+        "Featured social media posts showcasing your services",
+        "Complimentary event passes and reserved seating"
       ]
     },
     {
-      name: "Platinum",
-      price: "$25,000",
+      name: "Custom",
+      price: "Flexible",
       color: "from-primary to-secondary",
-      featured: true,
-      description: "Exclusive top-tier sponsorship with maximum exposure",
+      description: "Tailored partnership opportunities for your needs",
       benefits: [
-        "All Gold benefits",
-        "Logo on all materials (premium position)",
-        "10 conference passes",
-        "Premium booth location (20x20)",
-        "Keynote opportunity",
-        "VIP dinner invitation",
-        "Custom branding options",
-        "Post-event data report"
+        "Technical support or equipment donations",
+        "Provision of refreshments (coffee, snacks, breakfast)",
+        "Venue or logistics support",
+        "Additional prizes for contestants",
+        "Other in-kind contributions"
       ]
     }
   ];
 
   const previousSponsors = [
-    "Microsoft", "Google", "Amazon Web Services", "Cisco", 
-    "IBM", "Intel", "Oracle", "Cloudflare", "Palo Alto Networks",
-    "FireEye", "CrowdStrike", "Symantec", "Kaspersky", "Splunk",
-    "Fortinet", "Trend Micro", "Check Point", "McAfee"
+    "HackTheBox", "Microsoft", "Google", "Amazon Web Services", "Cisco", 
+    "IBM", "Oracle", "Cloudflare", "Palo Alto Networks",
+    "CrowdStrike", "Splunk", "Fortinet", "MTN", "Orange", "CAMTEL"
   ];
 
   return (
@@ -86,19 +78,20 @@ const SponsorSection = () => {
             Become a Sponsor
           </span>
           <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4">
-            Partner with <span className="gradient-text">HACKFEST</span>
+            Partner with <span className="gradient-text">237HACKFEST</span>
           </h2>
           <p className="text-foreground/80">
-            Join leading organizations in supporting the premier cybersecurity event of the year. Gain valuable exposure to security professionals, researchers, and industry leaders.
+            Join leading organizations in supporting the premier cybersecurity event in Cameroon. 
+            Gain valuable exposure to security professionals, researchers, and industry leaders.
           </p>
         </div>
 
         {/* Why Sponsor Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
           <div>
-            <h3 className="text-2xl font-bold font-orbitron mb-6">Why Sponsor Hackfest?</h3>
+            <h3 className="text-2xl font-bold font-orbitron mb-6">Why Sponsor 237HackFest?</h3>
             <p className="text-foreground/80 mb-8">
-              Sponsoring Hackfest offers unparalleled opportunities to connect with cybersecurity professionals, demonstrate thought leadership, and position your brand at the forefront of the security industry.
+              Partnering with 237HackFest provides your organization with a unique opportunity to connect with cybersecurity professionals, demonstrate thought leadership, and position your brand at the forefront of the security industry in Cameroon.
             </p>
             
             <div className="space-y-6">
@@ -107,8 +100,8 @@ const SponsorSection = () => {
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-1">Access to Top Talent</h4>
-                  <p className="text-foreground/70">Connect with 1,500+ security professionals, researchers, and enthusiasts from around the world.</p>
+                  <h4 className="font-bold text-lg mb-1">Boost Brand Visibility</h4>
+                  <p className="text-foreground/70">Engage with a highly targeted audience of tech innovators and cybersecurity professionals.</p>
                 </div>
               </div>
               
@@ -117,18 +110,8 @@ const SponsorSection = () => {
                   <Globe className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-1">Global Brand Exposure</h4>
-                  <p className="text-foreground/70">Showcase your brand to a targeted audience of security decision-makers and influencers.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="h-12 w-12 flex-shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <BarChart className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">Lead Generation</h4>
-                  <p className="text-foreground/70">Generate high-quality leads and build valuable relationships with potential clients and partners.</p>
+                  <h4 className="font-bold text-lg mb-1">Enhance Community Engagement</h4>
+                  <p className="text-foreground/70">Demonstrate your commitment to supporting digital innovation and cybersecurity awareness.</p>
                 </div>
               </div>
               
@@ -137,8 +120,18 @@ const SponsorSection = () => {
                   <Award className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-1">Industry Leadership</h4>
-                  <p className="text-foreground/70">Position your organization as a leader and innovator in the cybersecurity industry.</p>
+                  <h4 className="font-bold text-lg mb-1">Showcase Industry Leadership</h4>
+                  <p className="text-foreground/70">Position your brand as a forward-thinking leader in the technology space.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="h-12 w-12 flex-shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <BarChart className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-1">Network with Future Talent</h4>
+                  <p className="text-foreground/70">Gain access to emerging tech talent and future industry leaders in Cameroon.</p>
                 </div>
               </div>
             </div>
@@ -147,37 +140,37 @@ const SponsorSection = () => {
           <div className="bg-card rounded-xl border border-border p-8 backdrop-blur-sm relative">
             <div className="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-primary/10 blur-2xl"></div>
             
-            <h3 className="text-2xl font-bold font-orbitron mb-6">Sponsorship Stats</h3>
+            <h3 className="text-2xl font-bold font-orbitron mb-6">Event Stats</h3>
             
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-background/40 rounded-lg p-6 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-primary mb-1">1,500+</div>
-                <div className="text-sm text-foreground/70">Attendees</div>
+                <div className="text-3xl font-bold text-primary mb-1">1,000+</div>
+                <div className="text-sm text-foreground/70">Youth Target</div>
               </div>
               
               <div className="bg-background/40 rounded-lg p-6 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-secondary mb-1">30+</div>
-                <div className="text-sm text-foreground/70">Countries</div>
+                <div className="text-3xl font-bold text-secondary mb-1">100</div>
+                <div className="text-sm text-foreground/70">Elite Participants</div>
               </div>
               
               <div className="bg-background/40 rounded-lg p-6 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-accent mb-1">80%</div>
-                <div className="text-sm text-foreground/70">Decision Makers</div>
+                <div className="text-3xl font-bold text-accent mb-1">20</div>
+                <div className="text-sm text-foreground/70">Teams Competing</div>
               </div>
               
               <div className="bg-background/40 rounded-lg p-6 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-primary mb-1">92%</div>
-                <div className="text-sm text-foreground/70">Sponsor Satisfaction</div>
+                <div className="text-3xl font-bold text-primary mb-1">48</div>
+                <div className="text-sm text-foreground/70">Hour Challenge</div>
               </div>
             </div>
             
             <div className="mt-8 p-4 bg-muted/50 rounded-lg">
               <div className="flex items-center gap-2">
                 <Zap className="h-5 w-5 text-primary" />
-                <span className="text-sm font-medium">2024 Sponsorships are 75% sold out</span>
+                <span className="text-sm font-medium">Limited sponsorship slots available</span>
               </div>
               <div className="mt-2 w-full bg-background/50 rounded-full h-2.5 overflow-hidden">
-                <div className="bg-primary h-2.5 rounded-full" style={{ width: "75%" }}></div>
+                <div className="bg-primary h-2.5 rounded-full" style={{ width: "65%" }}></div>
               </div>
             </div>
           </div>
@@ -203,7 +196,7 @@ const SponsorSection = () => {
                 {tier.featured && (
                   <div className="absolute top-0 right-0">
                     <div className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
-                      MOST POPULAR
+                      RECOMMENDED
                     </div>
                   </div>
                 )}
@@ -260,14 +253,14 @@ const SponsorSection = () => {
         {/* Previous Sponsors */}
         <div className="mb-24">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold font-orbitron mb-4">Previous Sponsors</h3>
+            <h3 className="text-2xl md:text-3xl font-bold font-orbitron mb-4">Our Sponsors & Partners</h3>
             <p className="text-foreground/80">
-              Join these leading organizations that have partnered with Hackfest over the years.
+              Join these leading organizations that have partnered with 237HackFest.
             </p>
           </div>
           
           <div className="bg-card rounded-xl border border-border p-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
               {previousSponsors.map((sponsor, index) => (
                 <div 
                   key={index} 
@@ -337,13 +330,15 @@ const SponsorSection = () => {
             <div>
               <h3 className="text-2xl md:text-3xl font-bold font-orbitron mb-4">Ready to Become a Sponsor?</h3>
               <p className="text-foreground/80 mb-6">
-                Don't miss this opportunity to connect with the cybersecurity community and showcase your brand at Hackfest.
+                Don't miss this opportunity to connect with the cybersecurity community and showcase your brand at 237HackFest.
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Apply Now
-                </Button>
+                <a href="https://forms.gle/HdtJd5Q85sgjsED3A" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    Apply Now <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
                   Download Prospectus
                 </Button>
@@ -372,10 +367,9 @@ const SponsorSection = () => {
                     className="w-full rounded-md border border-border bg-background/50 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     <option value="">Select Sponsorship Interest</option>
-                    <option value="bronze">Bronze Package</option>
-                    <option value="silver">Silver Package</option>
-                    <option value="gold">Gold Package</option>
-                    <option value="platinum">Platinum Package</option>
+                    <option value="gold">Gold Package (200,000 XAF)</option>
+                    <option value="silver">Silver Package (100,000 XAF)</option>
+                    <option value="platinum">Platinum Package (50,000 XAF)</option>
                     <option value="custom">Custom Package</option>
                   </select>
                 </div>
@@ -383,6 +377,9 @@ const SponsorSection = () => {
                   Submit Inquiry
                 </Button>
               </form>
+              <p className="text-xs text-center mt-4 text-foreground/60">
+                For further inquiries: <a href="mailto:kamlewa.technologies@gmail.com" className="text-primary">kamlewa.technologies@gmail.com</a>
+              </p>
             </div>
           </div>
         </div>

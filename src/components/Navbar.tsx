@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -41,7 +41,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <span className="text-2xl font-bold font-orbitron gradient-text">
-                HACKFEST
+                237HACKFEST
               </span>
             </Link>
           </div>
@@ -77,12 +77,6 @@ const Navbar = () => {
               className="text-foreground/80 hover:text-primary transition-colors font-medium"
             >
               Schedule
-            </Link>
-            <Link
-              to="/workshops"
-              className="text-foreground/80 hover:text-primary transition-colors font-medium"
-            >
-              Workshops
             </Link>
             <Link
               to="/donate"
@@ -163,13 +157,6 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Schedule
-            </Link>
-            <Link
-              to="/workshops"
-              className="text-foreground/80 hover:text-primary transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Workshops
             </Link>
             <Link
               to="/donate"

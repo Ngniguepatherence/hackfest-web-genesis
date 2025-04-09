@@ -1,7 +1,7 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Clock, Flag, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -10,8 +10,8 @@ const HeroSection = () => {
   const [countdownMinutes, setCountdownMinutes] = useState("00");
   const [countdownSeconds, setCountdownSeconds] = useState("00");
 
-  // Set your event date here
-  const eventDate = new Date("2025-06-15T09:00:00");
+  // Set your event date here - May 2nd, 2025
+  const eventDate = new Date("2025-05-02T09:00:00");
 
   useEffect(() => {
     // Update countdown
@@ -71,7 +71,8 @@ const HeroSection = () => {
         this.size = Math.random() * 3 + 1;
         this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
-        this.color = `hsl(${Math.random() * 60 + 190}, 100%, 50%, ${Math.random() * 0.3 + 0.2})`;
+        const colors = ["hsla(0, 100%, 50%, 0.3)", "hsla(90, 100%, 50%, 0.3)", "hsla(60, 100%, 50%, 0.3)"];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
       update() {
@@ -110,7 +111,7 @@ const HeroSection = () => {
           
           if (distance < 80) {
             const opacity = 1 - distance/80;
-            ctx.strokeStyle = `hsla(196, 100%, 50%, ${opacity * 0.2})`;
+            ctx.strokeStyle = `hsla(90, 100%, 50%, ${opacity * 0.2})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -156,43 +157,79 @@ const HeroSection = () => {
       
       {/* Main content */}
       <div className="container px-4 pt-10 mx-auto text-center relative z-10">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <img 
+              src="/lovable-uploads/2b06fd43-eafd-4393-8b88-1c30d8c4bfcb.png" 
+              alt="237HackFest Logo" 
+              className="w-full max-w-md mx-auto"
+            />
+          </div>
+          
           <div className="mb-4 inline-block">
             <span className="px-4 py-1 bg-muted rounded-full text-xs uppercase tracking-wider font-medium text-primary">
-              Coming Soon - 2025
+              May 2nd-3rd, 2025 • Douala, Cameroon
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-orbitron">
-            <span className="gradient-text">HACKFEST</span> 2025
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-orbitron">
+            Revolutionizing <span className="gradient-text">Cybersecurity</span> in Cameroon
           </h1>
           
-          <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-xl mx-auto">
-            The ultimate gathering of cyber security enthusiasts, ethical hackers, and tech innovators. Join us for workshops, competitions, and networking.
+          <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+            Join the 237HackFest CTF/Hackathon Event of the Year! With HACKTHEBOX Cameroon.
+            Are you ready to witness or be part of a cybersecurity showdown like no other?
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Register Now <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              Learn More
-            </Button>
+            <Link to="/register">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                Register Now <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                Learn More
+              </Button>
+            </Link>
+          </div>
+          
+          {/* Event features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 mt-8 max-w-3xl mx-auto">
+            <div className="bg-card/50 backdrop-blur-lg p-6 rounded-lg border border-border flex items-start gap-3">
+              <Flag className="h-6 w-6 text-primary shrink-0 mt-1" />
+              <div className="text-left">
+                <h3 className="font-bold text-lg mb-1">CTF Challenge</h3>
+                <p className="text-sm text-foreground/70">
+                  Crack the code, capture the flag, and outsmart your opponents!
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-card/50 backdrop-blur-lg p-6 rounded-lg border border-border flex items-start gap-3">
+              <Shield className="h-6 w-6 text-secondary shrink-0 mt-1" />
+              <div className="text-left">
+                <h3 className="font-bold text-lg mb-1">Battle Ground Challenge</h3>
+                <p className="text-sm text-foreground/70">
+                  Attack, defend, and dominate in this ultimate tug-of-war for system control.
+                </p>
+              </div>
+            </div>
           </div>
           
           {/* Event details */}
           <div className="flex flex-wrap justify-center gap-6 mb-12 mt-4">
             <div className="flex items-center gap-2 text-foreground/80">
               <Calendar className="h-5 w-5 text-primary" />
-              <span>June 15-17, 2025</span>
+              <span>May 2-3, 2025</span>
             </div>
             <div className="flex items-center gap-2 text-foreground/80">
               <MapPin className="h-5 w-5 text-secondary" />
-              <span>Tech Hub Convention Center</span>
+              <span>Douala, Cameroon</span>
             </div>
             <div className="flex items-center gap-2 text-foreground/80">
               <Clock className="h-5 w-5 text-accent" />
-              <span>09:00 AM - 18:00 PM</span>
+              <span>48-hour Event</span>
             </div>
           </div>
           
