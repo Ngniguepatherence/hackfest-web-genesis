@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Clock, Flag, Shield } from "lucide-react";
@@ -160,10 +161,11 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
             <img 
-              src="/lovable-uploads/2b06fd43-eafd-4393-8b88-1c30d8c4bfcb.png" 
+              src="/lovable-uploads/386d8a98-1998-44da-a800-755052562fa9.png" 
               alt="237HackFest Logo" 
               className="w-full max-w-md mx-auto"
             />
+            <p className="font-orbitron text-lg mt-2">Hack. Innovate. Secure</p>
           </div>
           
           <div className="mb-4 inline-block">
@@ -187,9 +189,9 @@ const HeroSection = () => {
                 Register Now <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <Link to="/about">
+            <Link to="/agenda">
               <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-                Learn More
+                View Agenda
               </Button>
             </Link>
           </div>
@@ -267,6 +269,33 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+          
+          {/* Prizes section */}
+          <div className="mt-16">
+            <h3 className="text-xl font-bold font-orbitron mb-4">Compete for Amazing Prizes</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-secondary flex flex-col items-center">
+                <div className="text-secondary font-bold">2nd Place</div>
+                <div className="font-orbitron font-bold text-xl">150,000 XAF</div>
+              </div>
+              <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-primary flex flex-col items-center transform scale-110">
+                <div className="text-primary font-bold">1st Place</div>
+                <div className="font-orbitron font-bold text-xl">300,000 XAF</div>
+              </div>
+              <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-accent flex flex-col items-center">
+                <div className="text-accent font-bold">3rd Place</div>
+                <div className="font-orbitron font-bold text-xl">100,000 XAF</div>
+              </div>
+            </div>
+            <p className="text-sm text-foreground/70 mt-2">
+              Plus incredible gifts from sponsors, including HackTheBox vouchers!
+            </p>
+          </div>
+          
+          {/* Contact info */}
+          <div className="mt-8 text-sm text-foreground/70">
+            <p>For inquiries: <a href="mailto:kamlewa.technologies@gmail.com" className="text-primary">kamlewa.technologies@gmail.com</a> | +237 653906594</p>
           </div>
         </div>
       </div>

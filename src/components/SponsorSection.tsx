@@ -232,6 +232,7 @@ const SponsorSection = () => {
                         ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
                         : 'bg-card hover:bg-muted border border-primary text-foreground'
                     }`}
+                    onClick={() => window.open("https://tinyurl.com/237hackfestsponsor", "_blank")}
                   >
                     Select {tier.name}
                   </Button>
@@ -244,7 +245,11 @@ const SponsorSection = () => {
             <p className="text-foreground/80 mb-4">
               Need a custom sponsorship package? Contact our sponsorship team to discuss options.
             </p>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+            <Button 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary/10"
+              onClick={() => window.open("https://tinyurl.com/237hackfestsponsor", "_blank")}
+            >
               Contact for Custom Options
             </Button>
           </div>
@@ -334,7 +339,7 @@ const SponsorSection = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a href="https://forms.gle/HdtJd5Q85sgjsED3A" target="_blank" rel="noopener noreferrer">
+                <a href="https://tinyurl.com/237hackfestsponsor" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     Apply Now <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
